@@ -9,9 +9,10 @@ local function send_message(host, port)
 
     --le a mensagem digitada pelo usuário, envia ela para o server, recebe a resposta do server e imprime ela, caso o usuário não digite nada (EOF) sai do loop--
     while true do
-        io.write("Digite a mensagem desejada: ")
+        io.write("Digite a mensagem desejada ou aperte 0 para sair: ")
         local input = io.read()
-        if not input then
+        if not input or input == "0" then
+            print("Encerrando a conexão...")
             break
         end
 
